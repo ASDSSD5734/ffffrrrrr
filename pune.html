@@ -1,0 +1,491 @@
+<html>
+<head>
+  <title>Pune City Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    section {
+      padding: 60px 0;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    /* Full height container to center content vertically and horizontally */
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    .center-container {
+      height: 100vh; /* full viewport height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+    }
+    /* Optional: limit carousel max width */
+    #puneCarousel {
+      max-width: 700px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    img:hover
+    {
+      border:5px double red;
+      box-shadow:4px 4px 4px gray;
+      border-radius:10px;
+    }
+    .gallery-img {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .gallery-img:hover {
+      transform: scale(1.00);
+    }
+    .modal-dialog-centered {
+      max-width: 90%;
+    }
+    .modal-img {
+      width: 100%;
+      height: auto;
+    }
+    /* Style to cover the entire page */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.7); /* Light transparent background */
+      z-index: 10000000; /* Make sure it's on top of other content */
+    }
+    /* Hide loader when page is fully loaded */
+    body.loaded #loader {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  
+  
+  <!-- Loader Spinner -->
+  <div id="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  
+  <!-- Your main page content -->
+  <div class="container">
+    
+  </div>
+  
+  <script>
+    // Wait until the page is fully loaded, then hide the loader
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('d-none');
+        document.getElementById('content').classList.remove('d-none');
+      }, 3000); // 3000 milliseconds = 3 seconds
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+    <div class="container">
+      <a class="navbar-brand" href="#">I Love Pune City</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#places">Places</a></li>
+        <li class="nav-item"><a class="nav-link" href="#hotels">Hotels</a></li>
+        <li class="nav-item"><a class="nav-link" href="#famous">Peoples</a></li>
+        <li class="nav-item"><a class="nav-link" href="#institutions">Institutions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#public-services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#agriculture">Agriculture</a></li>
+        <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reach">Reach</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><div id="google_translate_element"></div><script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+            {pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+            'google_translate_element'
+            );
+          }
+        </script> 
+        <script type="text/javascript" 
+        src="app.js">
+      </script>
+    </li>  
+  </ul>
+</div>
+</div>
+</nav>
+
+
+
+<div class="center-container mt-3 ">
+  <section id="home">
+    <h1 class="mb-3">Welcome to Pune City</h1>
+    
+    <p class="mb-5 fs-5 text-muted">
+      Discover the cultural, historical and modern charm of Pune.
+    </p>
+    
+    <div id="puneCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <img src="images/caro/pune.jpg" class="d-block w-100" alt="Pune Image 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="images/caro/pune2.jpg" class="d-block w-100" alt="Pune Image 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="images/caro/pune3.jpg" class="d-block w-100" alt="Pune Image 3" />
+        </div>
+      </div>
+      
+      <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#puneCarousel"
+      data-bs-slide="prev"
+      >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    
+    <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#puneCarousel"
+    data-bs-slide="next"
+    >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+</div>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container">
+  <h2>About Pune</h2>
+  <p>Pune is a vibrant city in Maharashtra known for its rich history, educational institutions, and cultural heritage. It is often referred to as the cultural capital of Maharashtra.</p>
+  <img src="images/about/tot.jpg" alt="Shaniwar Wada Pune" class="img-fluid rounded" />
+</section>
+
+<!-- Places to Visit -->
+<section id="places" class="bg-light container">
+  <h2>Places to Visit</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/temple/aga.jpg" class="card-img-top" alt="Aga Khan Palace">
+        <div class="card-body">
+          <h5 class="card-title">Aga Khan Palace</h5>
+          <p class="card-text">A historical landmark associated with Mahatma Gandhi.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/temple/jjj.jpg" class="card-img-top" alt="Sinhagad Fort">
+        <div class="card-body">
+          <h5 class="card-title">Sinhagad Fort</h5>
+          <p class="card-text">Famous fort offering trekking opportunities and panoramic views.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/temple/raja.jpg" class="card-img-top" alt="Raja Dinkar Kelkar Museum">
+        <div class="card-body">
+          <h5 class="card-title">Raja Dinkar Kelkar Museum</h5>
+          <p class="card-text">A museum showcasing Indian artifacts and cultural heritage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hotels -->
+<section id="hotels" class="container">
+  <h2>Hotels</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/hotels/ott.jpg" class="card-img-top" alt="Hotel 1" />
+        <div class="card-body">
+          <h5 class="card-title">Hotel Marriott Pune</h5>
+          <p class="card-text">Luxurious stay with modern amenities.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/hotels/att.jpg" class="card-img-top" alt="Hotel 2" />
+        <div class="card-body">
+          <h5 class="card-title">Hyatt Pune</h5>
+          <p class="card-text">Comfortable and elegant accommodation.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/hotels/crop.jpg" class="card-img-top" alt="Hotel 3" />
+        <div class="card-body">
+          <h5 class="card-title">The Westin Pune</h5>
+          <p class="card-text">Premium services and hospitality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Famous Peoples -->
+
+<section id="famous people" class="mt-3 mb-3">
+  <div class="container mt-3"> 
+    <div class="row bg-image hover-zoom">
+      <h2>Famous Peoples</h2>
+      <div class="row g-3">
+        <div class="col-sm-3 p-3 text-dark  "><img src="images/people/kk.jpg" style="width:100%" height="500" class="img-thumbnail mt-3"><h4 class="text-center">Bal Gangadhar Tilak - </h4>Freedom fighter.</div>
+        <div class="col-sm-3 p-3 text-dark  "><img src="images/people/lab.jpg" style="width:100%" height="500" class="img-thumbnail mt-3"><h4 class="text-center">Jijabai – </h4>Mother of Chatrapati Shivaji Maharaj.</div>
+        <div class="col-sm-3 p-3 text-dark  "><img src="images/people/amu.jpg" style="width:100%" height="500" class="img-thumbnail mt-3"><h4 class="text-center">Amruta Khanvilkar – </h4>Actor of pune.</div>
+        <div class="col-sm-3 p-3 text-dark  "><img src="images/people/shivangi.jpg" style="width:100%" height="500" class="img-thumbnail mt-3"><h4 class="text-center">Shivangi Joshi –  </h4>Famous actor of a serial.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>    
+</section>
+
+<!-- Institutions -->
+<section id="institutions" class="container">
+  <h2>Institutions</h2>
+  <p>Pune is home to several prestigious educational and research institutions like:</p>
+  <div class="row g-3"> 
+    <div class="col-3">
+      <img src="images/study/sav1.jpg" class="img-fluid "   alt="SPPU" class="rounded" /><br> Pune University (Savitribai Phule Pune University)
+    </div>
+    <div class="col-3">
+      <img src="images/study/IISER.jpg" class="img-fluid "   alt="IISER" class="rounded" /><br>Indian Institute of Science Education and Research (IISER) 
+    </div>
+    <div class="col-3">
+      <img src="images/study/coep.jpg" class="img-fluid "  alt="COEP" class="rounded" /><br>College of Engineering, Pune (COEP)
+    </div>
+    <div class="col-3">
+      <img src="images/study/dna.jpg" class="img-fluid "   alt="NDA" class="rounded" /><br>National Defence Academy (NDA).
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Public Services -->
+<section id="public-services" class="bg-light container">
+  <h2>Public Services</h2>
+  <p>Pune offers a range of public services including:</p>
+  <div class="row g-3">
+    <div class="col-3">
+      <img src="images/services/mun.jpg" class="img-fluid"    alt="PMC" class="rounded" /><br>Pune Municipal Corporation.
+    </div>
+    <div class="col-3">
+      <img src="images/services/bus.jpg" class="img-fluid"    alt="PMPL" class="rounded" /><br>Public Transport: PMPML buses, local trains. 
+    </div>
+    <div class="col-3">
+      <img src="images/services/hosp.jpg" class="img-fluid"    alt="Health" class="rounded" /><br>Healthcare: Government and private hospitals
+    </div>
+    <div class="col-3">
+      <img src="images/services/police1.jpg" class="img-fluid"    alt="Police" class="rounded" /><br>Police and emergency services.
+    </section>
+    
+    <!-- Agriculture -->
+    <section id="agriculture" class="container">
+      <h2>Agriculture</h2>
+      <p>The region around Pune is known for cultivation of sugarcane, vegetables, and horticulture products. It supports both traditional and modern farming methods.</p>
+      <center><img src="images/farm/agri.jpg" alt="Agriculture" class="img-fluid rounded"/></center>
+    </section>
+    
+    <!-- Industries -->
+    <section id="industries" class="bg-light container">
+      <h2>Industries</h2>
+      <p>Pune is an industrial hub with sectors like automotive, IT, manufacturing, and education services flourishing.</p>
+      <div class="row g-3">
+        <div class="col-4">
+          <img src="images/industry/tata1.jpg" class="img-fluid "   data-index="0" alt="Automobile" class="rounded" /><br>Automobile companies: <br>Tata Motors, Bajaj Auto.
+        </div>
+        <div class="col-4">
+          <img src="images/industry/it.jpg" class="img-fluid "   data-index="1" alt="IT Park" class="rounded" /><br>Information Technology Parks: <br>Hinjewadi IT Park. 
+        </div>
+        <div class="col-4">
+          <img src="images/industry/midc2.jpg" class="img-fluid "   data-index="2" alt="MIDC" class="rounded" /><br>Manufacturing units and industrial estates.
+        </div>
+      </section>
+      
+      <!-- Photo Gallery -->
+      <section id="gallery" class="container">
+        <h2>Photo Gallery</h2>
+        <div class="container my-4">
+          <div class="row g-3">
+            <!-- Gallery Images -->
+            <div class="col-3">
+              <img src="images/gallery/pata.jpg" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-index="0" alt="Pataleshwar Cave" class="rounded" />Pataleshwar Cave
+            </div>
+            <div class="col-3">
+              <img src="images/gallery/ganpati.jpg" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-index="1" alt="Dagadusheth Temple" class="rounded" />Dagadusheth Temple
+            </div>
+            <div class="col-3">
+              <img src="images/gallery/osho.jpg" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-index="2" alt="Ganpati Temple" class="rounded" />Osho Ashram
+            </div>
+            <div class="col-3">
+              <img src="images/gallery/for1.jpg" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-index="3" alt="Fergusson College" class="rounded" />Fergusson College
+            </div>
+            <!-- Add more images as needed -->
+          </div>
+        </div>
+        
+        <div class="container my-4">
+          <div class="row g-3">
+            <!-- Gallery Images -->
+            <div class="col-3">
+              <img src="images/gallery/saras.jpg" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-index="0" alt="Saras Baug" class="rounded" />Saras Baug
+            </div>
+            <div class="col-3">
+              <img src="images/gallery/alandi.jpg" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-index="1" alt="Alandi Temple" class="rounded" />Alandi Temple
+            </div>
+            <div class="col-3">
+              <img src="images/gallery/gatha-mandir-dehu.jpg" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-index="2" alt="Gatha-Mandir-Dehu" class="rounded" />Gatha-Mandir-Dehu
+            </div>
+            <div class="col-3">
+              <img src="images/gallery/mini.jpg" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal" data-index="3" alt="Mini Balaji" class="rounded" />Mini Balaji
+            </div>
+            <!-- Add more images as needed -->
+          </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-body text-center position-relative">
+                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                <img id="modalImage" src="" class="modal-img">
+                <button class="btn btn-light position-absolute start-0 top-50 translate-middle-y" id="prevBtn">&#10094;</button>
+                <button class="btn btn-light position-absolute end-0 top-50 translate-middle-y" id="nextBtn">&#10095;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          const images = Array.from(document.querySelectorAll('.gallery-img'));
+          const modalImage = document.getElementById('modalImage');
+          let currentIndex = 0;
+          
+          images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+              currentIndex = index;
+              updateModalImage();
+            });
+          });
+          
+          document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateModalImage();
+          });
+          
+          document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateModalImage();
+          });
+          
+          function updateModalImage() {
+            modalImage.src = images[currentIndex].src;
+          }
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      </section>
+      
+      <!-- How to Reach -->
+      <section id="reach" class="bg-light container">
+        <h2>How to Reach Pune</h2>
+        <p>Pune is well connected by air, rail, and road:</p>
+        <div class="row g-3">
+          <!-- Gallery Images -->
+          <div class="col-4">
+            <img src="images/reach/air.jpg" class="img-fluid"   alt="Airport" class="rounded" /><br><strong>By Air:</strong> Pune International Airport with domestic and limited international flights.
+          </div>
+          <div class="col-4">
+            <img src="images/reach/train.jpg" class="img-fluid"   alt="Railway Station" class="rounded" /><br><strong>By Train:</strong> Pune Junction railway station connects to major Indian cities.
+          </div>
+          <div class="col-4">
+            <img src="images/reach/bus.jpg" class="img-fluid"   alt="Bus Stand" class="rounded" /><br><strong>By Road:</strong> Well connected by National Highways, buses available from nearby cities.
+          </div>
+          
+        </section>
+        
+        <!-- Contact Us -->
+        <section id="contact" class="container">
+          <h2>Contact Us</h2>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </section>
+        
+
+        <!-- Footer -->
+        <footer class="bg-primary text-white text-center p-3 mt-4">
+          &copy; 2025 Pune City. All rights reserved.<br>
+          <button type="submit" class="btn btn-warning btn-center text-muted"> Designed by:-<a href="https://www.linkdin.com/aniketghatule">Aniket Ghatule,</a> <a href="https://www.instagram.com/_itz_parshya__.01?igsh=MzRIODBiNWFIZA==">Prasanna Waydande,</a> <a href="https://www.linkdin.com/shubhamtingare">Shubham Tingare.</a>
+            Under the Gauidance of: <a rel="stylesheet" href="https://codexlabz.com/">Codexlabz.com</a></button>
+          </footer>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        
